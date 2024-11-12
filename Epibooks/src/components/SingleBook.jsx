@@ -11,9 +11,7 @@ export default function SingleBook({ book }) {
           style={{ height: 525 }}
         />
         <Card.Body>
-          <Card.Title className="text-center d-flex justify-content-center">
-            {book.title}
-          </Card.Title>
+          <Card.Title className="text-center">{book.title}</Card.Title>
         </Card.Body>
       </Card>
     </Col>
