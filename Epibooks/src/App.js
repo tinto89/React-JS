@@ -2,17 +2,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MyNav from "./components/MyNav";
 import MyFooter from "./components/MyFooter";
-import Welcome from "./components/Welcome";
+
 import AllTheBooks from "./components/AllTheBooks";
 import { Container } from "react-bootstrap";
+import { useState } from "react";
 
 function App() {
+  const [searchValue, setSearchValue] = useState("");
   return (
     <>
-      <MyNav />
-      <Container style={{ marginTop: 60, marginBottom: 50 }}>
-        <Welcome />
-        <AllTheBooks />
+      <MyNav setSearchValue={setSearchValue} />
+      <Container style={{ marginTop: 100, marginBottom: 50 }}>
+        <AllTheBooks searchValue={searchValue} />
       </Container>
       <MyFooter />
     </>

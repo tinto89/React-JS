@@ -1,19 +1,16 @@
 import { Row } from "react-bootstrap";
 import horror from "../books/horror.json";
 import SingleBook from "./SingleBook";
-import { useState } from "react";
-import SearchBar from "./SearchBar";
+import Welcome from "./Welcome";
 
-export default function AllTheBooks() {
-  const [searchValue, setSearchValue] = useState("");
-
+export default function AllTheBooks({ searchValue }) {
   const searchedBooks = horror.filter((book) =>
     book.title.toLowerCase().includes(searchValue.toLowerCase())
   );
 
   return (
     <>
-      <SearchBar setSearchValue={setSearchValue} />
+      <Welcome />
       <Row className="g-2">
         {searchedBooks.map((book) => (
           <SingleBook key={book.asin} book={book} />

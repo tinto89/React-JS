@@ -1,6 +1,7 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
+import SearchBar from "./SearchBar";
 
-export default function MyNav() {
+export default function MyNav({ setSearchValue }) {
   return (
     <Navbar
       expand="lg"
@@ -17,6 +18,7 @@ export default function MyNav() {
             <Nav.Link href="#">About</Nav.Link>
             <Nav.Link href="#">Browse</Nav.Link>
           </Nav>
+          <SearchBar setSearchValue={setSearchValue} />;
         </Navbar.Collapse>
       </Container>
     </Navbar>
