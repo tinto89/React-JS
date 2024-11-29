@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import horror from "./books/horror.json";
 import MyNav from "./components/MyNav";
 import MyFooter from "./components/MyFooter";
 import Welcome from "./components/Welcome";
@@ -12,21 +13,28 @@ import BookDetails from "./components/BookDetails";
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
+  const [category, setCategory] = useState(horror);
+
   return (
     <>
       <BrowserRouter>
-        <MyNav setSearchValue={setSearchValue} />
+        <MyNav setSearchValue={setSearchValue} setCategory={setCategory} />
         <Container className="mycontainer">
           <Row>
             <Col md={12}>
-              <Welcome />
+              <Welcome category={category} />
             </Col>
             <Routes>
               <Route
                 path="/"
-                element={<AllTheBooks searchValue={searchValue} />}
+                element={
+                  <AllTheBooks searchValue={searchValue} category={category} />
+                }
               />
-              <Route path="/book_details/:asin" element={<BookDetails />} />
+              <Route
+                path="/book_details/:asin"
+                element={<BookDetails category={category} />}
+              />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Row>

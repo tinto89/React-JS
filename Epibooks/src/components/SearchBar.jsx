@@ -11,7 +11,7 @@ export default function SearchBar({ setSearchValue }) {
         <Col>
           <Form.Control
             type="text"
-            placeholder="Cerca il libro"
+            placeholder="Search..."
             className="w-100"
             onChange={handleInputChange}
           />

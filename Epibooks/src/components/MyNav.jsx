@@ -1,8 +1,9 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import SearchBar from "./SearchBar";
 import { NavLink } from "react-router-dom";
+import Dropdown from "./Dropdown";
 
-export default function MyNav({ setSearchValue }) {
+export default function MyNav({ setSearchValue, setCategory }) {
   return (
     <Navbar
       expand="lg"
@@ -26,6 +27,7 @@ export default function MyNav({ setSearchValue }) {
             <NavLink to="/browse" className={"nav-link"}>
               Browse
             </NavLink>
+            <Dropdown setCategory={setCategory} />
           </Nav>
           <SearchBar setSearchValue={setSearchValue} />;
         </Navbar.Collapse>

@@ -20,14 +20,13 @@ export default function AllTheBooks({ searchValue }) {
             <SingleBook
               key={book.asin}
               book={book}
-              isSelected={selected?.asin === book.asin} // Controlla se è selezionato
-              onBookSelect={() => setSelected(book)} // Imposta il libro selezionato
+              selected={selected?.asin === book.asin}
+              selBook={() => setSelected(book)}
             />
           ))}
         </Col>
         <Col md={2} className="comment-area">
           <CommentArea book={selected} />
-          {/* Passa il libro selezionato */}
         </Col>
       </Row>
     </>

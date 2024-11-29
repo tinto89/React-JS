@@ -2,20 +2,20 @@ import { Button, Card, Col } from "react-bootstrap";
 import Dotdotdot from "react-dotdotdot";
 import { useNavigate } from "react-router-dom";
 
-export default function SingleBook({ book, isSelected, onBookSelect }) {
+export default function SingleBook({ book, selected, selBook }) {
   const navigate = useNavigate();
 
   return (
-    <Col md={4} className="mb-3">
+    <Col md={3} className="mb-3">
       <Card
         className={`d-flex flex-column ${
-          isSelected ? "border-2 border-danger" : ""
+          selected ? "border-2 border-danger" : ""
         }`}
         style={{
           height: 440,
           cursor: "pointer",
         }}
-        onClick={onBookSelect}
+        onClick={selBook}
       >
         <Card.Img
           variant="top"
@@ -34,7 +34,7 @@ export default function SingleBook({ book, isSelected, onBookSelect }) {
               navigate(`/book_details/${book.asin}`);
             }}
           >
-            Dettagli
+            Details
           </Button>
         </Card.Body>
       </Card>
