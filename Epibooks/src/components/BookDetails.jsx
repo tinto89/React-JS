@@ -1,4 +1,4 @@
-import { Card, Col, Row } from "react-bootstrap";
+import { Card, CardTitle, Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import CommentArea from "./CommentArea";
 import NotFound from "./NotFound";
@@ -12,15 +12,18 @@ export default function BookDetails({ category }) {
   }
 
   return (
-    <Row className="justify-content-center">
-      <Col md={4}>
-        <Card>
-          <Card.Img variant="top" src={foundBook.img} alt={foundBook.title} />
-        </Card>
-      </Col>
-      <Col md={8}>
-        <CommentArea details={foundBook} />
-      </Col>
-    </Row>
+    <Container>
+      <Row>
+        <Col md={4}>
+          <CardTitle className="text-center mb-2">{foundBook.title}</CardTitle>
+          <Card>
+            <Card.Img variant="top" src={foundBook.img} alt={foundBook.title} />
+          </Card>
+        </Col>
+        <Col md={8}>
+          <CommentArea details={foundBook} />
+        </Col>
+      </Row>
+    </Container>
   );
 }

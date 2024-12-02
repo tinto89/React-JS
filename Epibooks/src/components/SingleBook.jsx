@@ -9,7 +9,7 @@ export default function SingleBook({ book, selected, selBook }) {
     <Col md={3} className="mb-3">
       <Card
         className={`d-flex flex-column ${
-          selected ? "border-2 border-danger" : ""
+          selected ? "border-2 border-danger" : "border-2"
         }`}
         style={{
           height: 440,
@@ -28,6 +28,7 @@ export default function SingleBook({ book, selected, selBook }) {
             <Card.Title className="text-center">{book.title}</Card.Title>
           </Dotdotdot>
           <Button
+            variant="danger"
             className="w-100 mt-2"
             onClick={(e) => {
               e.stopPropagation();

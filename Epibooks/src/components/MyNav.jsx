@@ -1,9 +1,14 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import SearchBar from "./SearchBar";
 import { NavLink } from "react-router-dom";
-import Dropdown from "./Dropdown";
+import CategorySelect from "./CategorySelect";
 
-export default function MyNav({ setSearchValue, setCategory }) {
+export default function MyNav({
+  setSearchValue,
+  setCategory,
+  theme,
+  toggleTheme,
+}) {
   return (
     <Navbar
       expand="lg"
@@ -27,9 +32,12 @@ export default function MyNav({ setSearchValue, setCategory }) {
             <NavLink to="/browse" className={"nav-link"}>
               Browse
             </NavLink>
-            <Dropdown setCategory={setCategory} />
+            <CategorySelect setCategory={setCategory} />
           </Nav>
-          <SearchBar setSearchValue={setSearchValue} />;
+          <NavLink className={"nav-link text-white me-5"} onClick={toggleTheme}>
+            Set {theme === "dark" ? "Light Mode" : "Dark Mode"}
+          </NavLink>
+          <SearchBar setSearchValue={setSearchValue} />
         </Navbar.Collapse>
       </Container>
     </Navbar>

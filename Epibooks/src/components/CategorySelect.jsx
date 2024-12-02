@@ -5,7 +5,7 @@ import romance from "../books/romance.json";
 import scifi from "../books/scifi.json";
 import { DropdownButton, DropdownItem } from "react-bootstrap";
 
-export default function Dropdown({ setCategory }) {
+export default function CategorySelect({ setCategory }) {
   return (
     <DropdownButton variant="secondary" title="Category">
       <DropdownItem onClick={() => setCategory(fantasy)}>Fantasy</DropdownItem>
