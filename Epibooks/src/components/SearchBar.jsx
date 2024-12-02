@@ -1,5 +1,8 @@
+//import
 import React from "react";
 import { Col, Form, Row } from "react-bootstrap";
+
+// componente della searchbar che cattura il value
 
 export default function SearchBar({ setSearchValue }) {
   const handleInputChange = (event) => {

@@ -1,8 +1,11 @@
+// import
 import React from "react";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
+
+// costanti
 
 const API_TOKEN =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzRjYjk2MmM5MjI4ZDAwMTVmYWQyYTkiLCJpYXQiOjE3MzMwODE0NDIsImV4cCI6MTczNDI5MTA0Mn0.BnPpDizPDCQUbRM3D1BGAHBL28Dq56rISZ6hFP3SAXc";
@@ -11,6 +14,8 @@ const POST_URL = "https://striveschool-api.herokuapp.com/api/comments/";
 export default function AddComment({ asin, setReload }) {
   const [comment, setComment] = useState("");
   const [rating, setRating] = useState("");
+
+  // funzione fetch
 
   function postComments() {
     fetch(POST_URL, {
@@ -41,13 +46,18 @@ export default function AddComment({ asin, setReload }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    // avvio la funzione al click prendendo l'asin
     postComments(asin);
+    // stato che mi permette di aggiornare la GET con useEffect
     setReload(true);
+    // pulisco i campi
     setComment("");
     setRating("");
   }
 
   return (
+    // card per l'invio dei commenti
+
     <Card className="mb-2 text-center border-0">
       <Card.Header className="bg-danger-subtle fw-bold mb-1">
         Add Comment

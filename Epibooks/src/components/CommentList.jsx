@@ -1,5 +1,8 @@
+// import
 import React from "react";
 import { Card } from "react-bootstrap";
+
+// card per le recensioni
 
 export default function CommentList({ singleComment }) {
   return (

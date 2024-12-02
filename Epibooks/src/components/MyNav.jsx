@@ -1,8 +1,10 @@
+// import
 import { Navbar, Nav, Container } from "react-bootstrap";
 import SearchBar from "./SearchBar";
 import { NavLink } from "react-router-dom";
 import CategorySelect from "./CategorySelect";
 
+// la navbar ha valore di ricerca, il dropdown delle categorie ed anche la gestione del tema
 export default function MyNav({
   setSearchValue,
   setCategory,

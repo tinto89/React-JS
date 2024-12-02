@@ -1,7 +1,9 @@
+// import
 import { Button, Card, Col } from "react-bootstrap";
 import Dotdotdot from "react-dotdotdot";
 import { useNavigate } from "react-router-dom";
-
+// singlebook che prende il libro selezionato per il bordo rosso e la get delle recensioni
+// il pulsante details va al componente BookDetails
 export default function SingleBook({ book, selected, selBook }) {
   const navigate = useNavigate();
 
